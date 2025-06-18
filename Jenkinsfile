@@ -6,6 +6,8 @@ pipeline {
         DEPLOY_TO = "production"
         appVersion = ''
         environment = ''
+        REGION='us-east-1'
+
     }
 
      options {
