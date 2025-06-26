@@ -58,6 +58,19 @@ pipeline {
                 }
             }
         }
+        stage('Functional/API Tests') {
+            when{
+                expression {params.deploy_to == 'qa'}
+            }
+            steps {
+                script{
+                    sh """
+                       echo "functional test will be performed after DEV deployment. usually these are automated 
+                       selenium test cases written by testing team. If these test cases are failed Pipeline also fails"
+                    """
+                }
+            }
+        }
     }
         
     post { 
